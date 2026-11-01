@@ -8,10 +8,10 @@
 Many aspiring content creators struggle to figure out what actually makes a video go viral on platforms like TikTok and YouTube Shorts. Because they lack clear data on what hooks and pacing work best, they end up guessing, which leads to wasted production time and inconsistent audience growth.
 
 ## **2. SOLUTION**
-Launchpad is an analytics app that evaluates video concepts and past successes to generate an actionable **"Viral Score."** Instead of just showing stats after a video is posted, it helps creators plan their next move. The core MVP features are the Viral Score, a Content Organizer, and a Video Analyzer.
+Launchpad is an analytics app that evaluates video concepts and past successes to generate an actionable **"Viral Score."** Instead of just showing stats after a video is posted, it helps creators plan their next move. The core MVP features are the Viral Score, a Content Organizer, and a Script Analyzer. To comply with platform API terms, Launchpad will not scrape public data. Instead, it acts as a coach for the creator's own channel. Users will securely connect their channels via OAuth to pull their own real retention data.
 
 ## **3. TARGET MARKET**
-Aspiring and mid-tier content creators on YouTube and TikTok. While there are millions of amateur creators globally, our initial target is a cross-section of about **100,000 active amateur creators** spanning all niches (such as lifestyle, comedy, gaming, and education) who are actively trying to reach platform monetization thresholds.
+Aspiring and mid-tier content creators on YouTube and TikTok. While there are millions of amateur creators globally, our initial target is a cross-section of active amateur creators. [Add Citation here] However, because only 4% of roughly 50 million creators earn over $100K a year (Goldman Sachs), most of our users will be highly price-sensitive. Therefore, our immediate testing target is 5 active campus creators who will consent to connect their channels, providing the historical data needed to train the algorithm.
 
 ## **4. WHY IT IS VALUABLE**
 Launchpad takes the guesswork out of content creation. By analyzing what works before a creator spends hours filming and editing, we save them significant research time. More successful videos mean faster channel growth and better potential ad revenue.
@@ -22,25 +22,25 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 **Initial Market Math:** If we capture just **2%** of our 100,000 cross-niche target, that gives us **2,000 active premium users**. Assuming a realistic split of 70% on the Basic tier (1,400 users x $5 = $7,000) and 30% on the Pro tier (600 users x $10 = $6,000), that generates **$13,000 in monthly recurring revenue**.
 
 ## **6. MVP FEATURES**
-- **Viral Score:** An algorithm that scores a video link or concept based on current platform trends.
+- **Viral Score:** An algorithm that scores a draft video concept against the creator's own historical median views.
 - **Content Organizer:** A workspace where creators can plan and track video ideas.
-- **Video Analyzer:** Extracts basic stats (like pacing and keyword usage) from successful videos to highlight why they performed well.
-
+- **Script Analyzer:** Evaluates uploaded text scripts for hook length and time-to-payoff to highlight structural weaknesses before filming.
+  
 ## **7. TIMELINE AND DIVISION OF WORK**
 **Week 1:** 
-- **Christian:** Research YouTube/TikTok API data pulling and set up backend structure.
-- **Jordan:** Define the specific social media metrics needed for the Viral Score.
+- **Christian:** Research YouTube Analytics API OAuth flow and set up backend structure.
+- **Jordan:** Recruit 5 campus creators to connect their channels (consent/data plan).
 - **Nick:** Draft the baseline algorithm and logic for the scoring system.
 - **Jerry:** Wireframe the initial UI and dashboard layout.
 
 **Week 2:** 
 - **Christian:** Build the backend logic for the Content Organizer.
-- **Jordan:** Test the Viral Score manually against 50 real YouTube Shorts and TikToks.
+- **Jordan:** Backtest the Viral Score against the creators' last 30 videos.
 - **Nick:** Refine the scoring math based on the results of Jordan's testing.
 - **Jerry:** Code the front-end (HTML/CSS) for the Content Organizer.
 
 **Week 3:** 
-- **Christian:** Integrate the Video Analyzer backend with the front-end UI.
+- **Christian:** Integrate the Script Analyzer backend with the front-end UI.
 - **Jordan:** Test the overall user flow and polish the user experience.
 - **Nick:** Debug the backend scoring code and handle edge cases.
 - **Jerry:** Design the visual output for how the Viral Score is displayed to the user.
@@ -49,18 +49,18 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 ## **8. TEAM ROLES AND RESPONSIBILITIES**
 
 **Christian, Lead Programmer**
-- Design the initial architecture and AI integration for the main features.
+- Design the initial architecture. Program the OAuth data pulling and handle backend debugging.
 - Program the API data pulling and handle backend debugging.
 - *Estimated share of the codebase: 30%*
 
 **Jordan, QA Tester and Data Lead**
-- Research data collection limits on YouTube and TikTok.
+- Manage creator onboarding and OAuth consent. Test the integration and backtest score accuracy against historical video data.
 - Test the integration and validate the score accuracy against real videos.
 - *Estimated share of the codebase: 30%*
 
 **Nick, Researcher and Algorithm Design**
 - Research current virality trends on short-form platforms.
-- Design the backend logic and weighting for the scoring algorithm.
+- Design the backend logic and weighting for the scoring algorithm using statistical backtesting.
 - *Estimated share of the codebase: 20%*
 
 **Jerry, UI/UX Designer**
@@ -73,25 +73,25 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 ## **9. VIABILITY: HOW WE WILL PROVE THIS WORKS**
 
 **User Testing:**
-- We will interview 3 fellow Pace University students who actively create YouTube and TikTok content across different genres.
+- We will recruit 5 campus creators who will connect their channels via OAuth. Their consent is our data plan.
 - **Ask:** "Does this score accurately reflect your past analytics? Which premium tier ($5 or $10) would you subscribe to?"
-- We will run their past videos through our system to see if our Viral Score accurately predicts which ones actually performed best.
+- Backtest: We will test if our score ranks a creator's last 30 videos better than chance, reporting the correlation coefficient (Spearman's ρ).
 
 **Competitive Analysis (Checked October 2026):**
-- Tools like **VidIQ** and **TubeBuddy** are powerful, but their paid tiers cost $30+ a month and are strictly focused on YouTube SEO (keywords and tags).
+- Tools like **VidIQ ($19.99/mo)** and **TubeBuddy ($15/mo)** are strictly focused on YouTube SEO. OpusClip offers a generalized 'Virality Score' (0-99). Native analytics only show data after publication.
 - Native **YouTube** and **TikTok** analytics only show data *after* a video is published.
-- **Our difference:** Most existing tools rely heavily on search keywords, which only helps specific search-based niches (like tech tutorials). Launchpad stands out because it evaluates universal engagement metrics, like visual pacing, script structure, and hook strength. This means it can accurately predict virality for any niche based on audience psychology rather than just SEO tags.
-
+- **Our difference:** Launchpad stands out because it does not claim to predict global virality. Instead, it evaluates a creator's draft against their own historical performance using retention data they own.
+  
 ## **10. SCALABILITY: ROADMAP FROM MVP TO 100K USERS**
 
 **Phase 1 (This semester):** 
-- **Goal:** MVP desktop/web app with **100 to 500 early users** and 3 core features.
-- **Technical:** Basic web scraping and local file/simple database storage.
+- **Goal:** MVP desktop/web app with 3 to 5 early users (campus creators) and 3 core features.
+- **Technical:** OAuth integration and local file/simple database storage.
 - **Revenue:** Free, to build a base and train the scoring algorithm.
 
 **Phase 2 (6 months out):** 
 - **Goal:** Expand to **5,000 to 10,000 users** by marketing broadly across all popular content categories.
-- **Technical:** Move to a hosted cloud database and implement official YouTube/TikTok APIs.
+- **Technical:** Move to a hosted cloud database and expand official YouTube Analytics API usage.
 - **Revenue:** Launch the $5 and $10 premium tiers to establish monthly recurring revenue.
 
 **Phase 3 (12 months out):** 
@@ -100,7 +100,11 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 - **Revenue:** Introduce one-time token packs for bulk creators and agency tiers.
 
 ## **11. SOURCES AND REFERENCES**
-- **YouTube Data API v3 Documentation** (Checked October 2026 for video data pulling limits).
-- **TikTok for Developers Portal** (Checked October 2026 for research API access).
-- **VidIQ Pricing Page** (Checked October 2026 for competitor pricing baselines).
-- **Interviews:** 3 student content creators (Used to establish workflow timing and willingness to pay).
+- **Goldman Sachs Creator Economy Report:** Projecting $480B by 2027 (and the 4% earning over $100K stat).
+
+- **YouTube Analytics API Documentation:** For OAuth and retention data rules.
+
+- **OpusClip & VidIQ/TubeBuddy Pricing Pages:** Checked October 2026 for competitor feature/pricing baselines.
+
+- **Salganik, Dodds and Watts, Science (2006):** 14,341-person experiment showing that social influence makes hits less predictable, supporting our pivot away from "global virality prediction.
+
