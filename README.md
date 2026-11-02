@@ -2,8 +2,6 @@
 **Team Members:** Christian, Jordan, Nick, Jerry  
 **Category:** Social Media / Creator Tools  
 
----
-
 ## **1. PROBLEM STATEMENT**
 Many aspiring content creators struggle to figure out what actually makes a video go viral on platforms like TikTok and YouTube Shorts. Because they lack clear data on what hooks and pacing work best, they end up guessing, which leads to wasted production time and inconsistent audience growth.
 
@@ -11,7 +9,7 @@ Many aspiring content creators struggle to figure out what actually makes a vide
 Launchpad is an analytics app that evaluates video concepts and past successes to generate an actionable **"Viral Score."** Instead of just showing stats after a video is posted, it helps creators plan their next move. The core MVP features are the Viral Score, a Content Organizer, and a Script Analyzer. To comply with platform API terms, Launchpad will not scrape public data. Instead, it acts as a coach for the creator's own channel. Users will securely connect their channels via OAuth to pull their own real retention data.
 
 ## **3. TARGET MARKET**
-Aspiring and mid-tier content creators on YouTube and TikTok. While there are millions of amateur creators globally, our initial target is a cross-section of active amateur creators. [Add Citation here] However, because only 4% of roughly 50 million creators earn over $100K a year (Goldman Sachs), most of our users will be highly price-sensitive. Therefore, our immediate testing target is 5 active campus creators who will consent to connect their channels, providing the historical data needed to train the algorithm.
+Aspiring and mid-tier content creators on YouTube and TikTok. Goldman Sachs projects the creator economy could near $480 billion by 2027. However, because only 4% of roughly 50 million creators earn over $100K a year, most of our users will be highly price-sensitive. Therefore, our immediate testing target is 5 active campus creators who will consent to connect their channels, providing the historical data needed to train the algorithm.
 
 ## **4. WHY IT IS VALUABLE**
 Launchpad takes the guesswork out of content creation. By analyzing what works before a creator spends hours filming and editing, we save them significant research time. More successful videos mean faster channel growth and better potential ad revenue.
@@ -45,17 +43,19 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 - **Nick:** Debug the backend scoring code and handle edge cases.
 - **Jerry:** Design the visual output for how the Viral Score is displayed to the user.
 
+**Week 4:**
+- **All:** Final integration, bug fixing, slide deck rehearsal, appendix creation, and submission.
 
 ## **8. TEAM ROLES AND RESPONSIBILITIES**
 
 **Christian, Lead Programmer**
-- Design the initial architecture. Program the OAuth data pulling and handle backend debugging.
-- Program the API data pulling and handle backend debugging.
+- Design the initial architecture. 
+- Program the API data pulling, OAuth consent flow, and handle backend debugging.
 - *Estimated share of the codebase: 30%*
 
 **Jordan, QA Tester and Data Lead**
-- Manage creator onboarding and OAuth consent. Test the integration and backtest score accuracy against historical video data.
-- Test the integration and validate the score accuracy against real videos.
+- Manage creator onboarding and OAuth consent. 
+- Test the integration and backtest score accuracy against historical video data.
 - *Estimated share of the codebase: 30%*
 
 **Nick, Researcher and Algorithm Design**
@@ -75,10 +75,11 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 **User Testing:**
 - We will recruit 5 campus creators who will connect their channels via OAuth. Their consent is our data plan.
 - **Ask:** "Does this score accurately reflect your past analytics? Which premium tier ($5 or $10) would you subscribe to?"
-- Backtest: We will test if our score ranks a creator's last 30 videos better than chance, reporting the correlation coefficient (Spearman's ρ).
+- **Backtest:** We will test if our score ranks a creator's last 30 videos better than chance, reporting the correlation coefficient (Spearman's ρ).
 
 **Competitive Analysis (Checked October 2026):**
-- Tools like **VidIQ ($19.99/mo)** and **TubeBuddy ($15/mo)** are strictly focused on YouTube SEO. OpusClip offers a generalized 'Virality Score' (0-99). Native analytics only show data after publication.
+- Tools like **vidIQ ($19/mo)** and **TubeBuddy ($15/mo)** are strictly focused on YouTube SEO. 
+- **OpusClip** offers a generalized 'Virality Score' (0-99). 
 - Native **YouTube** and **TikTok** analytics only show data *after* a video is published.
 - **Our difference:** Launchpad stands out because it does not claim to predict global virality. Instead, it evaluates a creator's draft against their own historical performance using retention data they own.
   
@@ -100,11 +101,9 @@ We will use a **freemium monthly subscription model** with two premium tiers. Th
 - **Revenue:** Introduce one-time token packs for bulk creators and agency tiers.
 
 ## **11. SOURCES AND REFERENCES**
-- **Goldman Sachs Creator Economy Report:** Projecting $480B by 2027 (and the 4% earning over $100K stat).
-
-- **YouTube Analytics API Documentation:** For OAuth and retention data rules.
-
-- **OpusClip & VidIQ/TubeBuddy Pricing Pages:** Checked October 2026 for competitor feature/pricing baselines.
-
-- **Salganik, Dodds and Watts, Science (2006):** 14,341-person experiment showing that social influence makes hits less predictable, supporting our pivot away from "global virality prediction.
-
+- **Goldman Sachs Creator Economy Report:** Projecting $480B by 2027 and noting 4% earn over $100K. https://www.goldmansachs.com/intelligence/pages/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027.html
+- **YouTube Analytics API Documentation:** For OAuth and retention data rules. https://developers.google.com/youtube/analytics
+- **vidIQ Pricing:** Checked October 2026 for competitor baselines. https://vidiq.com/plans/
+- **TubeBuddy Pricing:** Checked October 2026 for competitor baselines. https://www.tubebuddy.com/pricing/
+- **OpusClip:** Checked October 2026 for Virality Score competitor. https://www.opus.pro/
+- **Salganik, Dodds and Watts, Science (2006):** 14,341-person experiment showing that social influence makes hits less predictable. https://www.science.org/doi/10.1126/science.1121066
